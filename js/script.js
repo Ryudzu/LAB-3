@@ -18290,13 +18290,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function checkTextInputs(input) {
     if (input.getAttribute('type') === 'text' && input.value.match(/[^a-zA-Zа-яА-Я\s]/)) {
       input.style.borderBottomColor = 'red';
-    } else if (input.getAttribute('type') === 'phone' && input.value.match(/[^\d\+\(\)\-]/)) {
+    } else if (input.getAttribute('type') === 'tel' && input.value.match(/[^\d\+\(\)\-]/)) {
       input.style.borderBottomColor = 'red';
     } else {
       input.style.borderBottomColor = 'black';
     }
-  } //проверяет установлен ли маркер в инпутах типа радио и чекбокс
-
+  }
 
   function checkCheckboxes(boxes) {
     for (var index = 0; index < boxes.length; index++) {
@@ -18304,12 +18303,12 @@ document.addEventListener('DOMContentLoaded', function () {
         findTitle(boxes[index]).style.borderBottom = '';
         return;
       }
-    }
+    } //проверяет установлен ли маркер в инпутах типа радио и чекбокс
 
     findTitle(boxes[0]).style.borderBottom = '1px solid red';
-  } //проверяет заданы ли данные в дате (календарь, время дня)
+  }
 
-
+  //проверяет заданы ли данные в дате (календарь, время дня)
   function checkSetTimeInputs(inputs) {
     var count = 0;
 
